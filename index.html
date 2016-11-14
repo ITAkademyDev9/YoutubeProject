@@ -3,10 +3,11 @@
   <html>
     <head>
       <!--Import Google Icon Font-->
+
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
+        <link rel="stylesheet" href="/css/style.css"  type="text/css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -29,7 +30,25 @@
     </div>
   </div>
 
+  <div class="fixed-action-btn horizontal click-to-toggle">
+    <a class="btn-floating btn-large red">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+  </div>
+
   <div class="container">
+    <section class="video">
+      <h2>Video</h2>
+      <div class="ytplayer" style="height:500px">
+
+      </div>
+    </section>
     <section id="top3">
       <h2>Top 3</h2>
       <div class="row">

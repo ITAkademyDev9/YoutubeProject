@@ -4,6 +4,10 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 // Check for jQuery.
+$('.fixed-action-btn').openFAB();
+ $('.fixed-action-btn').closeFAB();
+ $('.fixed-action-btn.toolbar').openToolbar();
+ $('.fixed-action-btn.toolbar').closeToolbar();
 if (typeof(jQuery) === 'undefined') {
   var jQuery;
   // Check if require is a defined function.
