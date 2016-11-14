@@ -5,23 +5,27 @@ $(function(){
 	}
 
 	// Search for a specified string.
-	function search() {
-	//$('.form_search').submit(function(e){
-	//e.preventDefault();
-		gapi.client.setApiKey('AIzaSyARvwirFktEIi_BTaKcCi9Ja-m3IEJYIRk');
+	//function search() {
+	$('.form_search').submit(function(e){
+		e.preventDefault();
+		gapi.client.setApiKey('AIzaSyBfFP8e2m3fp2V2RPXAvBzsO4xgXovm7Bk');
+		console.log('A');
         gapi.client.load('youtube', 'v3', function() {
-			  var query = $('#query').val();
-			  var request = gapi.client.youtube.search.list({
-			    q: query,
-			    part: 'snippet'
-			  });
-
-			  request.execute(function(response) {
-			    console.log(response);
-			    var str = JSON.stringify(response.result);
-			    console.log(str);
-			    $('#search-container').html(str);
-			  });
+			 searchA();
 			});
+    });
+
+
+    function searchA() {
+    		console.log('B');
+            var q = 'pink floyd';
+            var request = gapi.client.youtube.channels.list({
+                    part: 'statistics',
+                    forUsername : 'GameSprout'
+            });
+            request.execute(function(response) {
+                    var str = JSON.stringify(response.result);
+                    alert(str);
+            });
     }
 });
