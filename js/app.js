@@ -1,3 +1,6 @@
 $(function(){
-	var channels = ['UCUagJzaUxRT1YCTI_Zu0fsA'];
+    var base_url = 'https://www.googleapis.com/youtube/v3/';
+
+
+
 });
