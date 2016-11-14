@@ -1,7 +1,8 @@
-function YTPlayer(videoID){
+$('.video-item').click(function(){
+  var videoID = $(this).attr('data-videoId');
 
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
+  // var tag = document.createElement('script');
+  // tag.src = "https://www.youtube.com/player_api";
   // var firstScriptTag = document.getElementsByTagName('script')[0];
   // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -10,10 +11,9 @@ function YTPlayer(videoID){
     var player_width = $('.ytplayer').width();
     var player_height = $('.ytplayer').height();
     player = new YT.Player('ytplayer', {
-      console.log(videoID);
       height: player_height,
       width: player_width,
       videoId: videoID
     });
   }
-}
+});
