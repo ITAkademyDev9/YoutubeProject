@@ -13,6 +13,7 @@ $(function(){
 	  });
 
 	  request.execute(function(response) {
+	    console.log(response);
 	    var str = JSON.stringify(response.result);
 	    console.log(str);
 	    $('#search-container').html(str);
