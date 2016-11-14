@@ -5,7 +5,9 @@ $(function(){
 	}
 
 	// Search for a specified string.
-	function search() {
+	// function search() {
+	$('.form_search').submit(function(e){
+		e.preventDefault();
 	  var query = $('#query').val();
 	  var request = gapi.client.youtube.search.list({
 	    q: query,
@@ -18,5 +20,5 @@ $(function(){
 	    console.log(str);
 	    $('#search-container').html(str);
 	  });
-	}
+	});
 });
