@@ -7,9 +7,11 @@ function YTPlayer(videoID){
 
   var player;
   function onYouTubePlayerAPIReady() {
+    var player_width = $('.ytplayer').width();
+    var player_height = $('.ytplayer').height();
     player = new YT.Player('ytplayer', {
-      height: '360',
-      width: '640',
+      height: player_height,
+      width: player_width,
       videoId: videoID
     });
   }
