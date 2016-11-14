@@ -6,17 +6,22 @@ $(function(){
 
 	// Search for a specified string.
 	function search() {
-	  var query = $('#query').val();
-	  var request = gapi.client.youtube.search.list({
-	    q: query,
-	    part: 'snippet'
-	  });
+	//$('.form_search').submit(function(e){
+	//e.preventDefault();
+		gapi.client.setApiKey('AIzaSyARvwirFktEIi_BTaKcCi9Ja-m3IEJYIRk');
+        gapi.client.load('youtube', 'v3', function() {
+			  var query = $('#query').val();
+			  var request = gapi.client.youtube.search.list({
+			    q: query,
+			    part: 'snippet'
+			  });
 
-	  request.execute(function(response) {
-	    console.log(response);
-	    var str = JSON.stringify(response.result);
-	    console.log(str);
-	    $('#search-container').html(str);
-	  });
-	}
+			  request.execute(function(response) {
+			    console.log(response);
+			    var str = JSON.stringify(response.result);
+			    console.log(str);
+			    $('#search-container').html(str);
+			  });
+			});
+    }
 });
