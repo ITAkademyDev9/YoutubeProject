@@ -13,26 +13,79 @@
 </head>
 <body>
     <!-- Input search -->
-    <nav>
-      <div class="nav-wrapper grey darken-1">
-        <form action="" method="GET" class="form_search">
-          <div class="input-field">
-            <input id="query" type="search" name="q" placeholder="Recherche...">
-            <label for="search"><i class="material-icons">user</i></label>
-            <i class="material-icons" id="search-button">search</i>
-          </div>
-        </form>
-      </div>
+    <nav class="nav-extended grey darken-1">
+        <div class="nav-wrapper grey darken-1">
+            <form action="" method="GET" class="form_search">
+                <div class="input-field">
+                    <input id="query" type="search" name="q" placeholder="Recherche...">
+                    <label for="search"><i class="material-icons">user</i></label>
+                    <i class="material-icons" id="search-button">search</i>
+                </div>
+            </form>
+        </div>
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><a class="active" href="#tendances">Tendances</a></li>
+            <li class="tab"><a href="#videos">Videos</a></li>
+            <li class="tab"><a href="#channels">Channels</a></li>
+            <li class="tab"><a href="#playlists">Playlists</a></li>
+        </ul>
     </nav>
+    <div class="section"> 
 
+        <div class="article" id="tendances">
+            <h1 class="title_article">Tendances</h1>
+            <div class="boxs">
+                <div class="item-tendances">
+                    <div class="thumb-tendances"></div>
+                    <div class="infos-item-tendances">
+                        <span class="title-item">A necessitatibus eius laboriosam obcaecati</span>
+                        <p class="descript-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam assumenda quaerat voluptatibus veritatis fuga nihil maxime a optio dolorum odio, adipisci placeat autem accusamus ab nemo voluptate ex iure quasi.</p>
+                        <div class="btns-item">
+                            <i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="like">thumb_up</i>
+                            <i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="dislike">thumb_down</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article" id="videos">
+            <h1 class="title_article">Vidéos</h1>
+            <div class="boxs">
+                <div class="item-tendances">
+                    <div class="thumb-tendances"></div>
+                    <div class="infos-item-tendances">
+                        <span class="title-item">A necessitatibus eius laboriosam obcaecati</span>
+                        <p class="descript-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam assumenda quaerat voluptatibus veritatis fuga nihil maxime a optio dolorum odio, adipisci placeat autem accusamus ab nemo voluptate ex iure quasi.</p>
+                        <div class="btns-item">
+                            <i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="like">thumb_up</i>
+                            <i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="dislike">thumb_down</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article" id="channels">
+            <h1 class="title_article">Channels</h1>
+            <div class="boxs">
+                <div class="item-tendances">
+                    <div class="thumb-tendances"></div>
+                    <div class="infos-item-tendances">
+                        <span class="title-item">A necessitatibus eius laboriosam obcaecati</span>
+                        <p class="descript-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam assumenda quaerat voluptatibus veritatis fuga nihil maxime a optio dolorum odio, adipisci placeat autem accusamus ab nemo voluptate ex iure quasi.</p>
+                        <div class="btns-item">
+                            <i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="like">thumb_up</i>
+                            <i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="dislike">thumb_down</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="result"></div>
-
+    </div>
 
     <script src="js/jquery.js" charset="utf-8"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/client.js"></script>
-    <script src="js/search.js" charset="utf-8"></script>
-    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/materialize.min.js"></script>
 </body>
 </html>
