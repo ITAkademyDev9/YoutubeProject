@@ -11,3 +11,17 @@ h2{
   height: 60px !important;
   border-bottom: 1px solid grey;
 }
+
+.section{
+  padding: 0 10em;
+}
+.nav-wrapper{
+  background-color: #c51109 !important;
+}
+.tabs a{
+  color: #c51109 !important;
+}
+
+.tabs a: hover{
+  color: #c51109 !important;
+}
