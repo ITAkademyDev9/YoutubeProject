@@ -24,32 +24,36 @@
             </form>
         </div>
         <ul class="tabs">
-            <li class="tab"><a class="active" href="#tendances">Tendances</a></li>
-            <li class="tab"><a href="#videos">Videos</a></li>
-            <li class="tab"><a href="#channels">Channels</a></li>
-            <li class="tab"><a href="#playlists">Playlists</a></li>
+            <li class="tab tab-results"><a href="#results">Résultats <span class="badge" id="count">5</span></a></li>
+            <li class="tab tab-tendances"><a class="active" href="#tendances">Tendances</a></li>
+            <li class="tab tab-videos"><a href="#videos">Videos</a></li>
+            <li class="tab tab-channels"><a href="#channels">Channels</a></li>
+            <li class="tab tab-playlists"><a href="#playlists">Playlists</a></li>
         </ul>
     </nav>
-<<<<<<< HEAD
 
-    <div id="results"></div>
 
     <div class="section"> 
-=======
-    <div class="section">
->>>>>>> 11e2af6150a2c8f9ac5a6942443776a219d0e9b5
 
+        <div class="article" id="results">
+            <h1 class="title_article">Résultats pour : <strong id="search_keyword"></strong></h1>
+            <div class="boxs">
+            	
+            </div>
+        </div>
         <div class="article" id="tendances">
             <h1 class="title_article">Tendances</h1>
-            <div class="boxs">
+
+            <div class="box col s4">
                 <div class="item-tendances">
                     <div class="thumb-tendances"></div>
                     <div class="infos-item-tendances">
-                        <span class="title-item">A necessitatibus eius laboriosam obcaecati</span>
-                        <p class="descript-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam assumenda quaerat voluptatibus veritatis fuga nihil maxime a optio dolorum odio, adipisci placeat autem accusamus ab nemo voluptate ex iure quasi.</p>
+                        <h2 class="title-item">A necessitatibus eius laboriosam obcaecati</h2>
+                        <p class="descript-item">Lorem ipsum dolor sit amet, consectetur cras amet.</p>
+                        <a class="channel-name-item" href="channel.html?q=UC_x5XG1OV2P6uZZ5FSM9Ttw">consectetur cras</a>
                         <div class="btns-item">
-                            <i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="like">thumb_up</i>
-                            <i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="dislike">thumb_down</i>
+                            <span><i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="like">thumb_up</i><strong class="nbr_btn">3</strong></span>
+                            <span><i class="material-icons" data-type="action" data-videoId="ID_VIDEO" data-action="dislike">thumb_down</i><strong class="nbr_btn">1</strong></span>
                         </div>
                     </div>
                 </div>
@@ -58,7 +62,8 @@
 
         <div class="article" id="videos">
             <h1 class="title_article">Vidéos</h1>
-            <div class="boxs">
+
+            <div class="box">
                 <div class="item-tendances">
                     <div class="thumb-tendances"></div>
                     <div class="infos-item-tendances">
@@ -71,11 +76,12 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
         <div class="article" id="channels">
             <h1 class="title_article">Channels</h1>
-            <div class="boxs">
+            <div class="box">
                 <div class="item-tendances">
                     <div class="thumb-tendances"></div>
                     <div class="infos-item-tendances">
@@ -94,38 +100,7 @@
 
     <script src="js/jquery.js" charset="utf-8"></script>
     <script src="js/materialize.min.js"></script>
-
-    <script>
-    
-    keyWordsearch();
-
-    function keyWordsearch(){
-        gapi.client.setApiKey('AIzaSyDZf1-_UReE_LUfu7ElniSME6xO-d8vKlA');
-        gapi.client.load('youtube', 'v3', function() {
-                makeRequest();
-        });
-	}
-    function makeRequest() {
-        var q = $('#query').val();
-        var request = gapi.client.youtube.search.list({
-                q: q,
-                part: 'snippet', 
-                maxResults: 10
-        });
-        request.execute(function(response)  {                                                                                    
-                $('#results').empty();
-                var srchItems = response.result.items;
-                console.log(response);                     
-                $.each(srchItems, function(index, item) {
-                vidTitle = item.snippet.title;  
-                vidThumburl =  item.snippet.thumbnails.default.url;                 
-                vidThumbimg = '<img id="thumb" src="'+vidThumburl+'" alt="No  Image Available." style="width:204px;height:128px">';                   
-
-                $('#results').append(vidTitle + vidThumbimg);                      
-	        })  
-	    })  
-	}	
-  </script> 
-  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+    <script src="js/client.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
