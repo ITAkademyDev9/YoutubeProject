@@ -30,6 +30,9 @@
             <li class="tab"><a href="#playlists">Playlists</a></li>
         </ul>
     </nav>
+
+    <div id="results"></div>
+
     <div class="section"> 
 
         <div class="article" id="tendances">
@@ -87,5 +90,38 @@
 
     <script src="js/jquery.js" charset="utf-8"></script>
     <script src="js/materialize.min.js"></script>
+
+    <script>
+    
+    keyWordsearch();
+
+    function keyWordsearch(){
+        gapi.client.setApiKey('AIzaSyDZf1-_UReE_LUfu7ElniSME6xO-d8vKlA');
+        gapi.client.load('youtube', 'v3', function() {
+                makeRequest();
+        });
+	}
+    function makeRequest() {
+        var q = $('#query').val();
+        var request = gapi.client.youtube.search.list({
+                q: q,
+                part: 'snippet', 
+                maxResults: 10
+        });
+        request.execute(function(response)  {                                                                                    
+                $('#results').empty();
+                var srchItems = response.result.items;
+                console.log(response);                     
+                $.each(srchItems, function(index, item) {
+                vidTitle = item.snippet.title;  
+                vidThumburl =  item.snippet.thumbnails.default.url;                 
+                vidThumbimg = '<img id="thumb" src="'+vidThumburl+'" alt="No  Image Available." style="width:204px;height:128px">';                   
+
+                $('#results').append(vidTitle + vidThumbimg);                      
+	        })  
+	    })  
+	}	
+  </script> 
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 </body>
 </html>
