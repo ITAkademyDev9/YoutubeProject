@@ -7,3 +7,7 @@
 h2{
   text-align: center;
 }
+.nav-wrapper {
+  height: 60px !important;
+  border-bottom: 1px solid grey;
+}
