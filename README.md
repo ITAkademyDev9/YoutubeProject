@@ -21,4 +21,4 @@ Nous nous sommes séparés en 2 groupes : design (Alexandre et Timmy) et javascr
     - Jean à du s'absenter 2 après-midi mais çela n'a pas empeché l'avancement du projet.
     - Klenzo à du s'absenter 1 matiné mais çela n'a pas empeché l'avancement du projet.
 
-[:sparkles: Voir le site en ligne](http://trowme.com)
+[:computer: Voir le site en ligne](http://trowme.com)
