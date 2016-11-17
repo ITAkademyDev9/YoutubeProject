@@ -1,0 +1,46 @@
+@import url('fonts');
+@import url('mixins');
+
+html, body{ min-height: 100vh;}
+
+body{
+    background-color: @body_bgColor;
+    color: @body_color;
+    font-family: @body_fFamily;
+    //position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    // align-content: stretch;
+    overflow: auto;
+    position: relative;
+}
+
+.aside{
+    background-color: @aside_bgColor;
+    color: @aside_color;
+    width: 0;
+    min-height: 100%;
+    &.open{
+        width: @aside_width;
+        min-width: @aside_width;
+    }
+}
+
+.warp{
+    left: @aside_width;
+    right: 0;
+    overflow: auto;
+    width: 100%;
+}
+
+.header{
+    width: 100%;
+    background-color: @header_bgColor;
+    color: @header_color;
+    height: @header_height;
+    display: flex;
+    justify-content: space-between; 
+}

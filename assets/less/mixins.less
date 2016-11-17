@@ -1,0 +1,91 @@
+// Global
+@global_bgColor: rgb(241, 241, 241);
+@global_color: rgb(102, 102, 102);
+@global_fFamily: 'Roboto', sans-serif;
+@color_success: rgb(85, 153, 0);
+// Body
+@body_bgColor: @global_bgColor;
+@body_color: @global_color;
+@body_fFamily: @global_fFamily;
+
+// Aside
+@aside_bgColor: #292929;
+@aside_color: #F4F4F4;
+@aside_width: 270px;
+
+// Header
+@header_bgColor: rgb(204, 24, 30);
+@header_color: rgb(241, 241, 241);
+@header_height: 50px;
+@header_fSize: 1.8rem;
+
+.success{
+    padding: 5px;
+    background-color: @color_success;
+}
+
+
+@thumb-item_height: 180px;
+@thumb-item_width: 300px;
+
+/* *** COLOR *** */
+    .color-red{ color: rgb(235,54,15); }
+    .color-green{ color: rgb(0,191,100); }
+    .color-blue{ color: rgb(71,131,223); }
+    .color-yellow{ color: rgb(236,213,0); }
+    .color-purple{ color: rgb(164,0,181); }
+    .color-white{ color: rgb(235,240,241); }
+    .color-black{ color: rgb(41,41,41); }
+/* *** /COLOR *** */
+
+/* Config columns ! */
+    /* *** .col-$ *** */
+        .generate-columns(12);
+        .generate-columns(@n, @i: 1) when (@i =< @n) {
+          .col-@{i} {
+            width: (@i * 100% / @n);
+            display: inline-block;
+            float: left;
+          }
+          .generate-columns(@n, (@i + 1));
+        }
+    /* *** /.col-$ *** */
+
+    @media screen and (max-width: 992px) and (min-width: 1999px) {
+        .generate-mdcolumns(12);
+        .generate-mdcolumns(@n, @i: 1) when (@i =< @n) {
+          .md-@{i} {
+            width: (@i * 100% / @n);
+            display: inline-block;
+            float: left;
+          }
+          .generate-mdcolumns(@n, (@i + 1));
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .generate-smcolumns(12);
+        .generate-smcolumns(@n, @i: 1) when (@i =< @n) {
+          .sm-@{i} {
+            width: (@i * 100% / @n);
+            display: inline-block;
+            float: left;
+          }
+          .generate-smcolumns(@n, (@i + 1));
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .header .logo.responsive{display: block !important;}
+        .header .logo.desktop{display: none;}
+
+        .generate-xscolumns(12);
+        .generate-xscolumns(@n, @i: 1) when (@i =< @n) {
+          .xs-@{i} {
+            width: (@i * 100% / @n);
+            display: inline-block;
+            float: left;
+          }
+          .generate-xscolumns(@n, (@i + 1));
+        }
+}
